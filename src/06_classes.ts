@@ -1,0 +1,40 @@
+interface PersonInterface {
+    id: number;
+    name: string;
+    register() :string;
+}
+
+// classes
+// class is used to create multiple object
+
+class Person implements PersonInterface{
+    id:number
+    name:string
+
+    constructor(id:number , name:string){
+        this.id = id
+        this.name = name
+    }
+
+    register(){
+        return `${this.name} is now registerd`
+    }
+}
+
+const person_1 = new Person(1,'sanket')
+const person_2 = new Person(2,'sanket two')
+
+console.log(person_1.register())
+
+// subclass of person
+class Employe extends Person {
+    position : string
+
+    constructor (id:number , name:string , position: string){
+        super(id,name)
+        this.position = position
+    }
+}
+
+const emp1 =  new Employe(3 , "E1" , 'DEVELOPER')
+console.log(emp1.register());
